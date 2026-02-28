@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Name</title>
+    <title>Kireet</title>
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap"
       rel="stylesheet"
@@ -50,6 +50,7 @@
         z-index: 1000;
       }
 
+      /* NAV */
       nav {
         position: fixed;
         top: 0;
@@ -79,6 +80,7 @@
         gap: 2rem;
         list-style: none;
       }
+
       .nav-links a {
         font-family: "DM Mono", monospace;
         font-size: 0.78rem;
@@ -90,11 +92,13 @@
         transition: color 0.2s;
         cursor: pointer;
       }
+
       .nav-links a:hover,
       .nav-links a.active {
         color: var(--accent);
       }
 
+      /* APP */
       #app {
         max-width: 680px;
         margin: 0 auto;
@@ -111,6 +115,7 @@
         padding-top: 8rem;
         padding-bottom: 5rem;
       }
+
       .page.active {
         display: block;
       }
@@ -119,6 +124,7 @@
         transform: none;
       }
 
+      /* SECTION LABEL */
       .section-label {
         font-family: "DM Mono", monospace;
         font-size: 0.7rem;
@@ -130,6 +136,7 @@
         align-items: center;
         gap: 1rem;
       }
+
       .section-label::after {
         content: "";
         flex: 1;
@@ -146,17 +153,29 @@
         margin-bottom: 1.5rem;
         letter-spacing: -0.01em;
       }
+
       .home-p {
         color: var(--text);
         font-size: 1.1rem;
         max-width: 560px;
         margin-bottom: 1rem;
       }
+      .home-p a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border);
+        transition: border-color 0.2s;
+      }
+      .home-p a:hover {
+        border-color: var(--accent);
+      }
+
       .links-row {
         display: flex;
         gap: 1.5rem;
         margin-top: 2rem;
       }
+
       .links-row a {
         font-family: "DM Mono", monospace;
         font-size: 0.75rem;
@@ -168,128 +187,19 @@
         border-bottom: 1px solid var(--border);
         padding-bottom: 2px;
       }
+
       .links-row a:hover {
         color: var(--accent);
         border-color: var(--accent);
       }
 
-      /* POST CARDS */
-      .post-card {
-        border: 1px solid var(--border);
-        border-radius: 2px;
-        padding: 2rem 2rem 1.8rem;
-        margin-bottom: 1.5rem;
-        background: var(--surface);
-        cursor: pointer;
-        opacity: 0;
-        transform: translateY(12px);
-        transition:
-          opacity 0.4s,
-          transform 0.4s,
-          border-color 0.2s;
-      }
-      .post-card.visible {
-        opacity: 1;
-        transform: none;
-      }
-      .post-card:hover {
-        border-color: var(--accent);
-      }
-
-      .post-meta {
-        font-family: "DM Mono", monospace;
-        font-size: 0.68rem;
-        letter-spacing: 0.08em;
-        color: var(--muted);
-        text-transform: uppercase;
-        margin-bottom: 0.7rem;
-      }
-      .post-card h3 {
-        font-size: 1.25rem;
-        font-weight: 400;
-        color: var(--white);
-        margin-bottom: 0.6rem;
-        line-height: 1.35;
-      }
-      .post-card p {
-        font-size: 0.95rem;
+      /* RUMINATING */
+      .ruminating {
+        font-family: "EB Garamond", Georgia, serif;
+        font-size: 1.5rem;
+        font-style: italic;
         color: var(--text);
-        line-height: 1.65;
-      }
-      .post-read-more {
-        margin-top: 1.2rem;
-        font-family: "DM Mono", monospace;
-        font-size: 0.7rem;
-        color: var(--accent);
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-
-      /* POST DETAIL */
-      .post-detail {
-        border: 1px solid var(--border);
-        border-radius: 2px;
-        padding: 2.5rem 2.5rem 3rem;
-        background: var(--surface);
-      }
-      .post-detail .post-meta {
-        margin-bottom: 1rem;
-      }
-      .post-detail h1 {
-        font-size: clamp(1.6rem, 4vw, 2.2rem);
-        font-weight: 400;
-        color: var(--white);
-        line-height: 1.25;
-        margin-bottom: 0.5rem;
-        letter-spacing: -0.01em;
-      }
-      .post-subtitle {
-        font-size: 0.95rem;
-        color: var(--muted);
-        font-style: italic;
-        margin-bottom: 2rem;
-      }
-      .post-body {
-        color: var(--text);
-        font-size: 1.05rem;
-        line-height: 1.85;
-      }
-      .post-body p {
-        margin-bottom: 1.4rem;
-      }
-      .post-body p:last-child {
-        margin-bottom: 0;
-      }
-      .post-body em {
-        font-style: italic;
-        color: var(--white);
-      }
-      .post-body .closing {
-        margin-top: 2rem;
-        padding-top: 2rem;
-        border-top: 1px solid var(--border);
-        font-style: italic;
-        color: var(--muted);
-      }
-
-      .back-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-family: "DM Mono", monospace;
-        font-size: 0.72rem;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: var(--muted);
-        cursor: pointer;
-        margin-bottom: 2rem;
-        transition: color 0.2s;
-        border: none;
-        background: none;
-        padding: 0;
-      }
-      .back-link:hover {
-        color: var(--accent);
+        padding-top: 1rem;
       }
 
       /* INTERESTS */
@@ -300,9 +210,11 @@
         margin-bottom: 2.5rem;
         max-width: 560px;
       }
+
       .reads-list {
         list-style: none;
       }
+
       .reads-list li {
         border-bottom: 1px solid var(--border);
         padding: 1.4rem 0;
@@ -316,13 +228,16 @@
           opacity 0.4s,
           transform 0.4s;
       }
+
       .reads-list li.visible {
         opacity: 1;
         transform: none;
       }
+
       .read-content {
         flex: 1;
       }
+
       .reads-list a {
         color: var(--white);
         text-decoration: none;
@@ -331,15 +246,18 @@
         display: block;
         margin-bottom: 0.4rem;
       }
+
       .reads-list a:hover {
         color: var(--accent);
       }
+
       .read-desc {
         font-size: 0.92rem;
         color: var(--text);
         line-height: 1.65;
         font-style: italic;
       }
+
       .reads-tag {
         font-family: "DM Mono", monospace;
         font-size: 0.65rem;
@@ -357,9 +275,6 @@
         #app {
           padding: 0 1.5rem;
         }
-        .post-detail {
-          padding: 1.5rem 1.5rem 2rem;
-        }
       }
     </style>
   </head>
@@ -375,138 +290,41 @@
     <div id="app">
       <!-- HOME -->
       <div class="page" id="page-home">
-        <h1 class="home-h1">Thinking and Building.</h1>
         <p class="home-p">
           Hi, I'm
           <strong style="color: var(--white); font-weight: 500"
             >Kireet Singh</strong
           >
-          . I am trying to think about complex systems and in the process, build
-          cool stuff.
+          — I like math. Specifically the kind that shows up where you don't
+          expect it: how simple rules in
+          <a
+            href="https://writings.stephenwolfram.com/2026/01/p-vs-np-and-the-difficulty-of-computation-a-ruliological-approach/"
+            target="_blank"
+            >cellular automata</a
+          >
+          generate irreducible complexity, how the geometry of loss landscapes
+          shapes what neural networks can and can't learn. Mostly just trying to
+          understand how
+          <a href="https://en.wikipedia.org/wiki/Emergence" target="_blank"
+            >structure emerges</a
+          >
+          from underneath things.
         </p>
         <p class="home-p" style="color: var(--muted); font-size: 0.95rem">
-          Currently doing Masters in Computer Science in the University of
-          Siegen , Germany.
+          Currently in Siegen, Germany. Studying Theoretical Computer Science
         </p>
         <div class="links-row">
-          <a href="mailto:you@example.com">kireetsinghofficial@gmail.com</a>
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=kireetsinghofficial@gmail.com"
+            target="_blank"
+            >Contact me here</a
+          >
         </div>
       </div>
 
-      <!-- THOUGHTS LIST -->
+      <!-- THOUGHTS -->
       <div class="page" id="page-thoughts">
-        <div class="section-label">Thoughts</div>
-
-        <div class="post-card" data-route="/thoughts/fixed-points">
-          <div class="post-meta">Feb 2025 &nbsp;·&nbsp; 4 min read</div>
-          <h3>Fixed Points and the Verification Problem</h3>
-          <p>
-            A system finds stability in exactly the wrong place. On what
-            Brouwer's theorem quietly says about RL verification.
-          </p>
-          <div class="post-read-more">Read →</div>
-        </div>
-
-        <div class="post-card" data-route="/thoughts/beyond-the-default">
-          <div class="post-meta">Jan 2025 &nbsp;·&nbsp; 3 min read</div>
-          <h3>Beyond the Default</h3>
-          <p>
-            Bitcoin showed that foundational social primitives can be rebuilt.
-            What else is sitting there waiting?
-          </p>
-          <div class="post-read-more">Read →</div>
-        </div>
-      </div>
-
-      <!-- POST: fixed-points -->
-      <div class="page" id="page-post-fixed-points">
-        <button class="back-link" data-route="/thoughts">
-          ← Back to thoughts
-        </button>
-        <div class="post-detail">
-          <div class="post-meta">Feb 2025 &nbsp;·&nbsp; 4 min read</div>
-          <h1>Fixed Points and the Verification Problem</h1>
-          <p class="post-subtitle">
-            On why checking an AI might be as hard as training one
-          </p>
-          <div class="post-body">
-            <p>
-              Brouwer's fixed point theorem says something simple: any
-              continuous function mapping a space to itself always has at least
-              one point that doesn't move. It maps to itself.
-            </p>
-            <p>
-              Stir a cup of coffee. When it settles, at least one point in the
-              liquid ended up exactly where it started.
-            </p>
-            <p>
-              I've been thinking about this in the context of RL verification.
-              When a model is being trained, a verifier evaluates whether its
-              outputs are safe. The guardrail. But the model is optimizing
-              <em>against</em> that verifier — not maliciously, but
-              structurally. Training pushes it toward outputs that score well,
-              which isn't always the same as outputs that are actually safe.
-            </p>
-            <p>
-              Value iteration in RL is already a search for a fixed point — the
-              Bellman operator, stabilizing when it finds a policy that
-              reproduces itself under evaluation. What if that fixed point is
-              one where the model has learned to satisfy the verifier's surface
-              patterns rather than its intent?
-            </p>
-            <p>A stable, converged, verified-looking policy. That isn't.</p>
-            <p>
-              I don't know if this is the right lens. But the image stays with
-              me — a system finding stability in exactly the wrong place.
-            </p>
-            <p class="closing">
-              What does it mean to verify something that's optimizing to be
-              verified?
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- POST: beyond-the-default -->
-      <div class="page" id="page-post-beyond-the-default">
-        <button class="back-link" data-route="/thoughts">
-          ← Back to thoughts
-        </button>
-        <div class="post-detail">
-          <div class="post-meta">Jan 2025 &nbsp;·&nbsp; 3 min read</div>
-          <h1>Beyond the Default</h1>
-          <p class="post-subtitle">
-            On technology as a space to experiment with how we organize
-          </p>
-          <div class="post-body">
-            <p>
-              For most of history, social systems weren't really chosen. They
-              emerged, calcified, and became the only thing that felt possible.
-            </p>
-            <p>
-              Bitcoin changed something about that — not by succeeding at
-              everything it claimed, but by showing that a foundational
-              primitive like money could be rebuilt from scratch and actually
-              run. Flawed, contested. But real.
-            </p>
-            <p>
-              That moment quietly expanded what feels possible. If money can be
-              reimagined by a pseudonymous person with a whitepaper, what else
-              is sitting there waiting?
-            </p>
-            <p>
-              The institutions we have were designed for a different world. Not
-              wrong, just not built for this one. And somewhere in that gap
-              there's room for systems that couldn't have existed before — not
-              utopias, just different configurations. Testable ones.
-            </p>
-            <p>We haven't seriously explored that space yet.</p>
-            <p class="closing">
-              What would we build if we weren't trying to optimize the existing
-              thing?
-            </p>
-          </div>
-        </div>
+        <p class="ruminating">ruminating on it ...</p>
       </div>
 
       <!-- INTERESTS -->
@@ -589,16 +407,12 @@
       const staticRoutes = {
         "/": "home",
         "/thoughts": "thoughts",
-        "/thoughts/fixed-points": "post-fixed-points",
-        "/thoughts/beyond-the-default": "post-beyond-the-default",
         "/interests": "interests",
       };
 
       const navActive = {
         "/": null,
         "/thoughts": "/thoughts",
-        "/thoughts/fixed-points": "/thoughts",
-        "/thoughts/beyond-the-default": "/thoughts",
         "/interests": "/interests",
       };
 
@@ -623,12 +437,10 @@
         requestAnimationFrame(() =>
           requestAnimationFrame(() => {
             target.classList.add("visible");
-            target
-              .querySelectorAll(".post-card, .reads-list li")
-              .forEach((el, i) => {
-                el.classList.remove("visible");
-                setTimeout(() => el.classList.add("visible"), 80 + i * 70);
-              });
+            target.querySelectorAll(".reads-list li").forEach((el, i) => {
+              el.classList.remove("visible");
+              setTimeout(() => el.classList.add("visible"), 80 + i * 70);
+            });
           }),
         );
 
